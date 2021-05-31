@@ -1,0 +1,611 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5FBEB07-4EA8-4582-804A-DA8A2C45EDA5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CinelAirlines</RootNamespace>
+    <AssemblyName>CinelAirlines</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Control.Draggable, Version=1.0.5049.269, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Control.Draggable.1.0.5049.269\lib\net35-Client\Control.Draggable.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentEmail.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEmail.Core.3.0.0\lib\netstandard2.0\FluentEmail.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentEmail.Smtp, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentEmail.Smtp.3.0.0\lib\netstandard2.0\FluentEmail.Smtp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>D:\Transferências\itextsharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>D:\Transferências\itextsharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>D:\Transferências\itextsharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.11.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.11\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddAeroporto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddAeroporto.Designer.cs">
+      <DependentUpon>frmAddAeroporto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddAparelho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddAparelho.Designer.cs">
+      <DependentUpon>frmAddAparelho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddFuncionario.Designer.cs">
+      <DependentUpon>frmAddFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddInfoReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddInfoReserva.Designer.cs">
+      <DependentUpon>frmAddInfoReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddNoticia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddNoticia.Designer.cs">
+      <DependentUpon>frmAddNoticia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPais.Designer.cs">
+      <DependentUpon>frmAddPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddUser.Designer.cs">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddVoos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddVoos.Designer.cs">
+      <DependentUpon>frmAddVoos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlerta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlerta.Designer.cs">
+      <DependentUpon>frmAlerta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarAeroporto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarAeroporto.Designer.cs">
+      <DependentUpon>frmEditarAeroporto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarAparelho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarAparelho.Designer.cs">
+      <DependentUpon>frmEditarAparelho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarFuncionario.Designer.cs">
+      <DependentUpon>frmEditarFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarNoticia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarNoticia.Designer.cs">
+      <DependentUpon>frmEditarNoticia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarPais.Designer.cs">
+      <DependentUpon>frmEditarPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarReserva.Designer.cs">
+      <DependentUpon>frmEditarReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarUser.Designer.cs">
+      <DependentUpon>frmEditarUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditarVoo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditarVoo.Designer.cs">
+      <DependentUpon>frmEditarVoo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEnviarPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEnviarPdf.Designer.cs">
+      <DependentUpon>frmEnviarPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForgotPass.Designer.cs">
+      <DependentUpon>frmForgotPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMostraPdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMostraPdf.Designer.cs">
+      <DependentUpon>frmMostraPdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSoftware.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSoftware.Designer.cs">
+      <DependentUpon>frmSoftware.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_Aparelhos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Aparelhos.Designer.cs">
+      <DependentUpon>UC_Aparelhos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Home.Designer.cs">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Info.Designer.cs">
+      <DependentUpon>UC_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Paises.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Paises.Designer.cs">
+      <DependentUpon>UC_Paises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Reservas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Reservas.Designer.cs">
+      <DependentUpon>UC_Reservas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Sobre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Sobre.Designer.cs">
+      <DependentUpon>UC_Sobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Suporte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Suporte.Designer.cs">
+      <DependentUpon>UC_Suporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Users.Designer.cs">
+      <DependentUpon>UC_Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Voos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Voos.Designer.cs">
+      <DependentUpon>UC_Voos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddAeroporto.resx">
+      <DependentUpon>frmAddAeroporto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddAparelho.resx">
+      <DependentUpon>frmAddAparelho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddFuncionario.resx">
+      <DependentUpon>frmAddFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddInfoReserva.resx">
+      <DependentUpon>frmAddInfoReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddNoticia.resx">
+      <DependentUpon>frmAddNoticia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPais.resx">
+      <DependentUpon>frmAddPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddUser.resx">
+      <DependentUpon>frmAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddVoos.resx">
+      <DependentUpon>frmAddVoos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlerta.resx">
+      <DependentUpon>frmAlerta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarAeroporto.resx">
+      <DependentUpon>frmEditarAeroporto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarAparelho.resx">
+      <DependentUpon>frmEditarAparelho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarFuncionario.resx">
+      <DependentUpon>frmEditarFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarNoticia.resx">
+      <DependentUpon>frmEditarNoticia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarPais.resx">
+      <DependentUpon>frmEditarPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarReserva.resx">
+      <DependentUpon>frmEditarReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarUser.resx">
+      <DependentUpon>frmEditarUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditarVoo.resx">
+      <DependentUpon>frmEditarVoo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEnviarPdf.resx">
+      <DependentUpon>frmEnviarPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmForgotPass.resx">
+      <DependentUpon>frmForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMostraPdf.resx">
+      <DependentUpon>frmMostraPdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSoftware.resx">
+      <DependentUpon>frmSoftware.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UC_Aparelhos.resx">
+      <DependentUpon>UC_Aparelhos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Home.resx">
+      <DependentUpon>UC_Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Info.resx">
+      <DependentUpon>UC_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Paises.resx">
+      <DependentUpon>UC_Paises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Reservas.resx">
+      <DependentUpon>UC_Reservas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Sobre.resx">
+      <DependentUpon>UC_Sobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Suporte.resx">
+      <DependentUpon>UC_Suporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Users.resx">
+      <DependentUpon>UC_Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Voos.resx">
+      <DependentUpon>UC_Voos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CinelAirlines2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_shutdown_26px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ticket_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_runway_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_airplane_50px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_info_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_male_user_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryCinelAirlines\LibraryCinelAirlines.csproj">
+      <Project>{60dc3875-15b4-4fa5-8391-b1df8f36dd64}</Project>
+      <Name>LibraryCinelAirlines</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_male_user_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-airbus-a380-boeing-767-airbus-a330-boeing-737-aircraft-airbus-a380-boeing-767.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A380.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\travel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avioes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Passageiros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A380-HiFly-1024x575.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aviaoNoticia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_ok_45px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_more_than_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_back_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_left_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_right_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_steve_jobs_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ila.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aviaob2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alemanha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bosnia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brasil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bulgaria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Canada.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Croacia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cuba.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dinamarca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Espanha.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Portugal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BandeiraBranca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_customer_support_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CINEL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pedro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suporte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Suporte1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_man_office_worker_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_woman_office_worker_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SuporteTec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_send_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_message_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_trash_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_edit_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_location_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_location_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sol1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_align_text_center_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_align_text_left_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_align_text_left_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linkedin.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
